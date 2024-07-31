@@ -2,6 +2,34 @@
 // Future versions of Hyper may add additional config options,
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
+const backgroundColor = "rgba(26, 27, 38, 0.1)";
+const foregroundColor = "#a9b1d6";
+
+const black = "#363b54";
+const blue = "#7aa2f7";
+const cyan = "#7dcfff";
+const green = "#41a6b5";
+const magenta = "#bb9af7";
+const red = "#f7768e";
+const white = "#787c99";
+const yellow = "#e0af68";
+
+const lightBlack = "#363b54";
+const lightBlue = "#7aa2f7";
+const lightCyan = "#7dcfff";
+const lightGreen = "#41a6b5";
+const lightMagenta = "#bb9af7";
+const lightRed = "#f7768e";
+const lightWhite = "#acb0d0";
+const lightYellow = "#e0af68";
+
+const borderColor = "#101014";
+const activeTabBorderBottomColor = "#3d59a1";
+
+const cursorColor = foregroundColor;
+const cursorAccentColor = backgroundColor;
+
+const selectionColor = "#515c7e40";
 module.exports = {
     config: {
         // choose either `'stable'` for receiving highly polished,
@@ -18,14 +46,6 @@ module.exports = {
             alpha: 150 // alpha value between 0 and 255
         },
 
-        hyperline: {
-            plugins: [
-                "ip",
-                "cpu",
-                "spotify"
-            ]
-        },
-
         updateChannel: 'stable',
         // default font size in pixels for all tabs
         fontSize: 15,
@@ -40,24 +60,24 @@ module.exports = {
         // letter spacing as a relative unit
         letterSpacing: 0,
         // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-        cursorColor: 'rgba(248,28,229,0.8)',
+        cursorColor: cursorColor,
         // terminal text color under BLOCK cursor
-        cursorAccentColor: '#000',
+        cursorAccentColor: cursorAccentColor,
         // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
         cursorShape: 'bean',
         // set to `true` (without backticks and without quotes) for blinking cursor
         cursorBlink: true,
         // color of the text
-        foregroundColor: '#fff',
+        foregroundColor: foregroundColor,
         // terminal background color
         // opacity is only supported on macOS
         // backgroundColor: '#000',
-        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        backgroundColor: backgroundColor,
 
         // terminal selection color
-        selectionColor: 'rgba(248,28,229,0.3)',
+        selectionColor: selectionColor,
         // border color (window, tabs)
-        borderColor: '#333',
+        borderColor: borderColor,
         // custom CSS to embed in the main window
         css: '',
         // custom CSS to embed in the terminal window
@@ -77,24 +97,22 @@ module.exports = {
         // including the 6 x 6 color cubes and the grayscale map, just provide
         // an array here instead of a color map object
         colors: {
-            black: '#000000',
-            red: '#C51E14',
-            green: '#1DC121',
-            yellow: '#C7C329',
-            blue: '#0A2FC4',
-            magenta: '#C839C5',
-            cyan: '#20C5C6',
-            white: '#C7C7C7',
-            lightBlack: '#686868',
-            lightRed: '#FD6F6B',
-            lightGreen: '#67F86F',
-            lightYellow: '#FFFA72',
-            lightBlue: '#6A76FB',
-            lightMagenta: '#FD7CFC',
-            lightCyan: '#68FDFE',
-            lightWhite: '#FFFFFF',
-            limeGreen: '#32CD32',
-            lightCoral: '#F08080',
+            black,
+            red,
+            green,
+            yellow,
+            blue,
+            magenta,
+            cyan,
+            white,
+            lightBlack,
+            lightRed,
+            lightGreen,
+            lightYellow,
+            lightBlue,
+            lightMagenta,
+            lightCyan,
+            lightWhite,
         },
         // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
         // if left empty, your system's login shell will be used by default
@@ -161,7 +179,10 @@ module.exports = {
     //   `@company/project`
     //   `project#1.0.1`
     // plugins: ["hyper-opacity"],
-    plugins: ["hyper-acrylic", "hyperline"],
+    plugins: [
+        "hyper-acrylic",
+        "hyperline",
+    ],
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
     // to load it and avoid it being `npm install`ed
